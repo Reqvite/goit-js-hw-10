@@ -30,7 +30,6 @@ function checkNumbersOfCountry(data) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
         return;
     } else {
-        console.log(data);
         createMarkup(data)  
     }
 }
@@ -41,8 +40,7 @@ function createMarkup(data) {
         moreCountryMarkup(data)
     } else {
         oneCountryMarkup(data)
-    } 
-    
+    }     
 }
 
 function clearContainer() {
