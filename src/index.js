@@ -14,12 +14,12 @@ function getCountryName(e) {
     if (name === '') {
         clearContainer()
         return;
-    } 
+    }
     fetchCountries(name)
         .then(data => {
-         checkNumbersOfCountry(data)
+            checkNumbersOfCountry(data)
         })
-}       
+}
 
 function checkNumbersOfCountry(data) {
     if (data === undefined) {
@@ -31,19 +31,18 @@ function checkNumbersOfCountry(data) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
         return;
     } else {
-        createMarkup(data)  
+        createMarkup(data)
     }
 }
 
 function createMarkup(data) {
-        clearContainer()
+    clearContainer()
     if (data.length > 1) {
         moreCountryMarkup(data)
     } else {
         oneCountryMarkup(data)
-    }     
+    }
 }
-
 function clearContainer() {
     refs.countryListContainer.innerHTML = '';
     refs.countryInfoContainer.innerHTML = '';
