@@ -14,7 +14,7 @@ function fetchCountries(name) {
         })
        .catch((err) => {
             console.warn(err);
-            Notiflix.Notify.failure("Oops, there is no country with that name.");
+           Notiflix.Notify.failure("Oops, there is no country with that name.");
     })       
 }
 

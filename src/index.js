@@ -22,7 +22,8 @@ function getCountryName(e) {
 }       
 
 function checkNumbersOfCountry(data) {
-    if (data === undefined ) {
+    if (data === undefined) {
+        clearContainer()
         return;
     }
     if (data.length > 10) {
