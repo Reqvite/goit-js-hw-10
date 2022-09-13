@@ -1,9 +1,9 @@
-export { oneCountryMarkup, moreCountryMarkup, appendCountryMarkup, refs }
+export { oneCountryMarkup, listOfCountries, refs }
 
 const refs = {
     inputRef: document.querySelector('#search-box'),
     countryListContainer: document.querySelector('.country-list'),
-    countryInfoContainer: document.querySelector('.country-info')
+  countryInfoContainer: document.querySelector('.country-info'),
 }  
 
 function oneCountryMarkup(data) {
@@ -27,7 +27,7 @@ function oneCountryMarkup(data) {
     appendСountryMarkup(countryMarkup)
 }
 
-function moreCountryMarkup(data) {
+function listOfCountries(data) {
          const countryMarkup = data.map(el => {
             const { name: { official }, flags: { svg } } = el;
             return `<li class="county-list__item">
@@ -36,7 +36,7 @@ function moreCountryMarkup(data) {
         <p class="country-list__name">${official}</p>
       </li>`
         }).join('')
-        appendСountriesMarkup(countryMarkup)
+     appendСountriesMarkup(countryMarkup)
 }
 
 function appendСountriesMarkup(countryMarkup) {
@@ -45,5 +45,3 @@ function appendСountriesMarkup(countryMarkup) {
 function appendСountryMarkup(countryMarkup) {
     refs.countryInfoContainer.insertAdjacentHTML('afterbegin', countryMarkup)
 }
-
-
